@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const loginRouter = require("./router/loginRouter");
 
 // internal imports
 const {
@@ -36,7 +37,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routing setup
-
+app.use("/", loginRouter);
 
 // 404 not found error handler
 app.use(notFoundHandler);
