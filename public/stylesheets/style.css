@@ -515,6 +515,9 @@
   
   #branding h1 {
     color: var(--light);
+    margin-bottom: 40px;
+    color: yellowgreen;
+    font-size: 22px;
   }
   
   #branding img {
