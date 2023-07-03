@@ -18,7 +18,7 @@ dotenv.config();
 
 // database connection
 mongoose
-  .connect(process.env.MONGODB_CONNECTION, {
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jbxtt4r.mongodb.net/chatbox?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
