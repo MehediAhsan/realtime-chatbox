@@ -7,8 +7,16 @@ const path = require("path");
 const User = require("../models/Person");
 
 // get users page
-function getUsers(req, res, next) {
-  res.render("users");}
+async function getUsers(req, res, next) {
+  try {
+    const users = await User.find();
+    res.render("users", {
+      users: users,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
 
 // add user
 async function addUser(req, res, next) {
