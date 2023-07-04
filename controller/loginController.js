@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const createError = require("http-errors");
 
 // internal imports
-const User = require("../models/People");
+const User = require("../models/Person");
 
 // get login page
 function getLogin(req, res, next) {
